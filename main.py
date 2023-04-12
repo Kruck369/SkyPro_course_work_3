@@ -38,8 +38,12 @@ for i in range(len(operations_list_sorted)):
     operation_i = Operation(date, description, where_from, where_to, summ, currency, status)
     operations_objects.append(operation_i)
 
-# Выводим на экран последние 5 успешных транзакций
-for i in range(0, 6):
+# Спрашиваем у пользователя количество транзакций
+print("Введите желаемое количество транзакций:")
+user_input = int(input())
+
+# Выводим на экран нужное количество последних успешных транзакций
+for i in range(0, user_input+1):
     operation = operations_objects[i]
     if operation.status != "EXECUTED":
         continue
